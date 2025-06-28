@@ -16,11 +16,11 @@ export const pasteSlice = createSlice({
       const paste = action.payload;
       const exists = state.pastes.findIndex((item) => item.title === paste.title) !== -1;
       if (exists) {
-        toast("This paste already exists");
+        toast("This Note already exists");
         return;
       }
       if (paste.title == "" || paste.content == "") {
-        toast('Invalid Paste');
+        toast('Invalid Note');
         return;
       }
       state.pastes.push(paste);
@@ -48,7 +48,7 @@ export const pasteSlice = createSlice({
 
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("Paste Deleted")
+        toast.success("Notes Deleted")
       }
     },
     resetPaste: (state, action) => {
