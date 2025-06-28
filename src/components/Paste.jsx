@@ -52,6 +52,12 @@ const Paste = () => {
             </div>
           ))
         }
+        {
+          filteredData.length == 0 &&
+          <div className='place-self-center'>
+            <p>No Notes yet...</p>
+          </div>
+        }
       </div>
     </div>
   )
