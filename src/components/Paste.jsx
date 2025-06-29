@@ -13,7 +13,8 @@ const Paste = () => {
 
   const filteredData = pastes.filter(
     (paste) =>
-      paste.title.toLowerCase().includes(searchTerm.toLowerCase())
+      paste.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      new Date(paste.createdAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }).toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   function handleDelete(pasteId) {
@@ -23,13 +24,13 @@ const Paste = () => {
   return (
     <div className='flex flex-col items-center max-md:w-[100%]'>
       <input
-        className='p-2 rounded-2xl mt-5 border-2 min-md:w-[40%]'
+        className='p-2 rounded-2xl mt-5 border-2 min-md:w-[40%] max-md:w-[70%]'
         type='search'
         placeholder='Search here'
         value={searchTerm}
         onChange={(e) => setsearchTerm(e.target.value)}
       />
-      <div className='flex flex-col gap-5 mt-5 pb-10 max-md:w-[80%] min-md:w-[50%] items-center'>
+      <div className='flex flex-col gap-5 mt-5 pb-10 max-md:w-[90%] min-md:w-[50%] items-center'>
         {
           filteredData.length > 0 &&
           filteredData.map((paste) => (
