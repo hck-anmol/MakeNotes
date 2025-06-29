@@ -45,7 +45,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className='flex px-30 py-10 justify-center w-[100%] gap-6 max-md:flex-col max-md:gap-3'>
+    <div className='flex px-5 py-10 justify-center w-[100%] gap-6 max-md:flex-col max-md:gap-5'>
       <div className='flex flex-col gap-2 w-[45%] max-md:w-[100%]'>
         <input
           className='p-1 rounded-2xl  w-[100%] pl-4 border-2 border-black'
