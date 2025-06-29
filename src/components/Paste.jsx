@@ -18,7 +18,26 @@ const Paste = () => {
   );
 
   function handleDelete(pasteId) {
-    dispatch(removeFromPaste(pasteId))
+    toast((t) => (
+      <span>
+        Are you sure?
+        <button
+          className="ml-2 px-2 py-1 bg-red-400 rounded"
+          onClick={() => {
+            dispatch(removeFromPaste(pasteId));
+            toast.dismiss(t.id);
+          }}
+        >
+          Yes
+        </button>
+        <button
+          className="ml-2 px-2 py-1 bg-gray-300 rounded"
+          onClick={() => toast.dismiss(t.id)}
+        >
+          No
+        </button>
+      </span>
+    ));
   }
 
   return (
@@ -30,7 +49,7 @@ const Paste = () => {
         value={searchTerm}
         onChange={(e) => setsearchTerm(e.target.value)}
       />
-      <div className='flex flex-col gap-5 mt-5 pb-10 max-md:w-[90%] min-md:w-[50%] items-center'>
+      <div className='flex flex-col-reverse gap-5 mt-5 pb-10 max-md:w-[90%] min-md:w-[50%] items-center'>
         {
           filteredData.length > 0 &&
           filteredData.map((paste) => (
