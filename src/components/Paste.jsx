@@ -21,19 +21,19 @@ const Paste = () => {
   }
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center max-md:w-[100%]'>
       <input
-        className='p-2 rounded-2xl min-w-[600px] mt-5 border-2'
+        className='p-2 rounded-2xl mt-5 border-2 min-md:w-[40%]'
         type='search'
         placeholder='Search here'
         value={searchTerm}
         onChange={(e) => setsearchTerm(e.target.value)}
       />
-      <div className='flex flex-col gap-5 mt-5 pb-10'>
+      <div className='flex flex-col gap-5 mt-5 pb-10 max-md:w-[100%] min-md:w-[50%] items-center'>
         {
           filteredData.length > 0 &&
           filteredData.map((paste) => (
-            <div key={paste?._id || paste.title} className='flex flex-col justify-between h-50 py-3 w-140 px-4 border-2 rounded-2xl'>
+            <div key={paste?._id || paste.title} className='flex flex-col justify-between h-50 py-3 w-[80%] px-4 border-2 rounded-2xl'>
               <div className='flex flex-row gap-4 place-content-evenly'>
                 <button className='bg-emerald-300 py-2 px-3 rounded-xl' onClick={() => { navigate(`/?pasteId=${paste?._id}`) }}>Edit</button>
                 <button className='bg-emerald-300 py-2 px-3 rounded-xl' onClick={() => { navigate(`/pastes/${paste?._id}`) }}>View</button>

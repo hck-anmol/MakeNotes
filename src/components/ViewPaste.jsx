@@ -23,27 +23,27 @@ const ViewPaste = () => {
   }
 
   return (
-    <div>
-      <div className='flex px-30 py-10 justify-center pr-50'>
-        <div className='flex flex-col gap-2 w-[50%] ml-20'>
+    <div className='w-100%'>
+      <div className='flex py-10 justify-center w-[100%] gap-6 max-md:flex-col max-md:gap-3'>
+        <div className='flex flex-col gap-2 w-[45%] max-md:w-[100%]'>
           <input
             disabled
-            className='p-1 rounded-2xl  w-[80%] pl-4 border-2 border-black'
+            className='p-1 rounded-2xl  w-[100%] pl-4 border-2 border-black'
             type='text'
-            placeholder='Entet Titlle here'
+            placeholder='Entet title here'
             value={title}
             onChange={(e) => settitle(e.target.value)}
           />
           <textarea
             disabled
-            className='rounded-2xl mt-4 w-[80%] px-4 border-2 py-3 h-[400px]'
+            className='rounded-2xl mt-4 w-[100%] px-4 border-2 py-3 h-[400px]'
             value={value}
             placeholder='Enter content here'
             onChange={(e) => setvalue(e.target.value)}
             rows={20}
           />
         </div>
-        <div className='flex flex-col items-start'>
+        <div className='flex flex-col items-center'>
           <button className='px-6 py-2 rounded-2xl  bg-amber-300 active:bg-amber-50 active:border-2 border-amber-300'
             onClick={() => { navigate(`/?pasteId=${paste?._id}`) }}>
             Edit
