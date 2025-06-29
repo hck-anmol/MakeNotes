@@ -23,8 +23,8 @@ const ViewPaste = () => {
   }
 
   return (
-    <div className='w-100%'>
-      <div className='flex py-10 justify-center w-[100%] gap-6 max-md:flex-col max-md:gap-3'>
+    <div>
+      <div className='flex px-5 py-10 justify-center w-[100%] gap-6 max-md:flex-col max-md:gap-5'>
         <div className='flex flex-col gap-2 w-[45%] max-md:w-[100%]'>
           <input
             disabled
